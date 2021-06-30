@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeJS Pagination</title>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <% data.forEach(entry => { %>
+        <h1><%= entry.title %></h1>
+        <p><%= entry.url %></p>
+    <% }) %>
+
+    <div class="break"></div>
+
+    <!--Display the links to the pages-->
+    <% if(page > 1) { %> <a href="/?page=<%=page-1%>">Before</a> <% } %>
+    <% for(let i = iterator; i <= endingLink; i++) { %>
+        <% if(i === page) { %>
+        <a class="selectedLink" href="/?page=<%=i%>"><%=i%></a>
+        <% continue; %>
+    <% } %>
+        <a href="/?page=<%=i%>"><%=i%></a>
+        <% } %>
+        <% if(page < numberOfPages) { %> <a href="/?page=<%=page+1%>">After</a> <% } %>
+</body>
+</html>

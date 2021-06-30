@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    padding: 10px;
+}
+
+h1{
+    margin: 10px 0;
+}
+
+a{
+    margin-right: 15px;
+    color: blue;
+}
+
+.selectedLink{
+    color: red;
+}
+
+.break{
+    margin: 50px 0;
+}
+
+a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+}
